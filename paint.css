@@ -1,0 +1,43 @@
+.canvas-div{
+	text-align: center;
+}
+
+canvas{
+	border: 1px solid black;
+}
+
+.valspan{
+	padding: 3px;
+	margin: 3px;
+	width: 50%;
+	min-width: 200px;
+}
+
+.betrow{
+	padding: 3px;
+	margin: 3px;
+}
+
+.xy-div,.rphi-div{
+	width: 45%;
+}
+.xy-div{
+	float: left;
+}
+.rphi-div{
+	float: right;
+}
+
+.funcElem{
+	margin: 3px;
+	padding: 3px;
+	border: 1px solid black;
+}
+.text{
+	font: 15px/23px "Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.text>p{
+	margin-bottom: 12px;
+}
