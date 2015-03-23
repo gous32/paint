@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+	
+			<title>Paint</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="paint.js"></script>
+		<link rel="stylesheet" href="paint.css">
+	</head>
+	<body>
+		<div class="text">
+			<p>Рисовалка графиков.</p>
+			<p>Мне лень много объяснять. В первых нескольких контролах - параметры области отображения</p>
+			<p>Внизу две кнопки. Одна добавляет на график функцию y(x), другая - r(phi). Для функции можно задать шаг отрисовки, начало, конец. цвет, поворот относительно начала координат и текст. Текст - это кусок JS-функции (дада, я использую eval, но кто не без греха?)</p>
+			<p>В частности в функциях можно использовать тригонометрию, логарифмы и всё такое. Перед ними стоит постаить 'Math.', например, Math.sin(1). Полный список <a href="http://javascript.ru/manual/object/Math">здесь</a></p>
+			<p>Для возведения в степень используйте Math.pow(x, n)</p>
+			<p>Для тех, кто понимает. Вы можете в функцию засунуть любой валидный JS-код. На вход она принимает x(phi), вернуть она должна числовое значение, по умолчанию - y(r)</p>
+			<p>Да, при обновлении страницы вы не потеряете данные! Также можно скопировать адресную строку и получить точно такой же график в новой вкладке.</p>
+			<p>Плюс в окошке рядом с кнопкой Import содержится некая инфа, обновляемая при рисовании, которую можно оттуда скопировать или вставить. При нажатии на Import, браузер нарисует функцию, которая породила эту строку.</p>
+		</div>		
+		<div class="descr-div">
+		</div>
+		<div class="canvas-div">
+			<div class="betrow">
+				<span class="valspan">
+					x from: <input class="resize" value="-10" field="xFrom">
+				</span>
+				<span class="valspan">
+					x to: <input class="resize" value="10" field="xTo">
+				</span>
+			</div>
+			<div class="betrow">
+				<span class="valspan">
+					y from: <input class="resize" value="-10" field="yFrom">
+				</span>
+				<span class="valspan">
+					y to: <input class="resize" value="10" field="yTo">
+				</span>
+			</div>
+			<div class="betrow">
+				<span class="valspan">
+					canvas width: <input class="resize" value="600" field="width">
+				</span>
+				<span class="valspan">
+					canvas height: <input class="resize" value="600" field="height">
+				</span>
+			</div>
+			<div class="betrow">
+				<span class="valspan">
+					Draw axles: <input id="axle" type="checkbox">
+				</span>
+			</div>
+			<canvas id="paint">
+			</canvas>
+			<div><button class="render">Render</button></div>
+		</div>
+		<div class="func-div">
+<!--			<input id="jsonInput"> -->
+			<textarea id="jsonInput">
+			</textarea>
+			<button id="import">Import</button><br><br>
+			<div class="xy-div">
+				<button class="x-add">Add XY function</button>
+				<div class="proto funcElem x">
+					<span class="funcInput">Func: 	<input value="y=x"></span>
+					<span class="fromInput">From: 	<input value="-10"></span>
+					<span class="toInput">To: 		<input value="10"></span>
+					<span class="stepInput">Step: 	<input value="0.1"></span>
+					<span class="colorInput">color: <input value="#FF0000"></span>
+					<span class="rotInput">rotate: <input value="0"></span>
+					<button class="del">Delete</button>
+				</div>
+			</div>
+			<div class="rphi-div">
+				<button class="r-add">Add R-Phi function</button>
+				<div class="proto funcElem r">
+					<span class="funcInput">Func: 	<input value="r=phi"></span>
+					<span class="fromInput">From: 	<input value="0"></span>
+					<span class="toInput">To: 		<input value="6.3"></span>
+					<span class="stepInput">Step: 	<input value="0.1"></span>
+					<span class="colorInput">color: <input value="#FF0000"></span>
+					<span class="rotInput">rotate: <input value="0"></span>
+					<button class="del">Delete</button>
+				</div>			
+			</div>
+		</div>
+	</body>
+</html>
